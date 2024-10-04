@@ -30,12 +30,12 @@ body {
   color: #F4F4F4;
 }
 
-h1 {
-  font-size: 58px;
-  padding: 10px 12px;
+#user-input {
+  padding: 20px 20px;
   border: 1px solid #B295FF;
   border-radius: 5px;
   max-width: 50%;
+  background-color: #6943FF;
 
 }
 
