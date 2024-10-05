@@ -4,20 +4,34 @@
 1 kilogram = 2.204 pound
 */
 
+let metersConversionRate = 3.281
+let litersConversionRate  = 0.264
+let kilosConversionRate = 2.204
+
 const convertBtn = document.getElementById("convert-btn")
-let inputEl = document.getElementById("input")
+let inputEl = document.getElementById("user-input")
 let lengthEl = document.getElementById("length-el")
+let volumeEl = document.getElementById("volume-el")
+let massEl = document.getElementById("mass-el")
 
 convertBtn.addEventListener("click", function() {
-  console.log("Clicked")
+
+  let inputNumber = inputEl.value
+  lengthEl.innerHTML = `
+    <p>
+    ${inputNumber} Meters = ${ Number(inputNumber * metersConversionRate).toFixed(3) } Feet |
+    ${inputNumber} Feet = ${ Number(inputNumber / metersConversionRate).toFixed(3) } Meters
+    </p>`
+
+    volumeEl.innerHTML = `
+    <p>
+    ${inputNumber} Liters = ${ Number(inputNumber * litersConversionRate).toFixed(3) } Gallons |
+    ${inputNumber} Gallons = ${Number(inputNumber / litersConversionRate).toFixed(3)} Liters
+    </p>`
+
+    massEl.innerHTML = `
+    <p>
+    ${inputNumber} Kilograms = ${ Number(inputNumber * litersConversionRate).toFixed(3)} Pounds |
+    ${inputNumber} Pounds = ${ Number(inputNumber / litersConversionRate).toFixed(3)} Kilograms
+    </p>`
 })
-
-
-// user inputs a value
-// card innerHTML shows length in meters and feet
-
-// userInput.value * 3.281 = feet
-// userInput.value * 0.3048 = meters
-// do one calculation that results in feet and one that results in meters
-// round down with isFixed(3)?
-// display in card h3 + p
